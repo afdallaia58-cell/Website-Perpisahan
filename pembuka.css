@@ -1,0 +1,663 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #24283b 0%,
+            #161a2a 45%,
+            #090d1a 100%
+        );
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================
+   HALAMAN PEMBUKA
+========================================== */
+
+.opening-page {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================
+   BACKGROUND GLOW
+========================================== */
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+}
+
+
+.glow-one {
+
+    width: 350px;
+    height: 350px;
+
+    background:
+        rgba(190, 140, 255, 0.18);
+
+    top: 10%;
+    left: 15%;
+
+    animation:
+        glowMove 8s ease-in-out infinite;
+
+}
+
+
+.glow-two {
+
+    width: 300px;
+    height: 300px;
+
+    background:
+        rgba(255, 150, 210, 0.15);
+
+    bottom: 10%;
+    right: 15%;
+
+    animation:
+        glowMove 10s ease-in-out infinite reverse;
+
+}
+
+
+@keyframes glowMove {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(60px, -40px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+/* ==========================================
+   PARTICLES / BINTANG
+========================================== */
+
+.particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+
+.particles span {
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.8);
+
+    animation:
+        twinkle 3s ease-in-out infinite;
+
+}
+
+
+.particles span:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particles span:nth-child(2) {
+    top: 25%;
+    left: 30%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(3) {
+    top: 12%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+    top: 45%;
+    left: 8%;
+    animation-delay: 1.5s;
+}
+
+.particles span:nth-child(5) {
+    top: 65%;
+    left: 20%;
+    animation-delay: .5s;
+}
+
+.particles span:nth-child(6) {
+    top: 75%;
+    right: 12%;
+    animation-delay: 2.5s;
+}
+
+.particles span:nth-child(7) {
+    top: 35%;
+    right: 8%;
+    animation-delay: 1.2s;
+}
+
+.particles span:nth-child(8) {
+    bottom: 15%;
+    left: 40%;
+    animation-delay: .8s;
+}
+
+.particles span:nth-child(9) {
+    top: 20%;
+    right: 40%;
+    animation-delay: 1.8s;
+}
+
+.particles span:nth-child(10) {
+    bottom: 25%;
+    right: 30%;
+    animation-delay: 2.2s;
+}
+
+.particles span:nth-child(11) {
+    top: 55%;
+    left: 35%;
+    animation-delay: .3s;
+}
+
+.particles span:nth-child(12) {
+    bottom: 10%;
+    right: 45%;
+    animation-delay: 1.4s;
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+
+        opacity: .2;
+
+        transform: scale(.7);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.5);
+
+    }
+
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.opening-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 750px;
+
+    padding: 30px;
+
+    animation:
+        contentAppear 2s ease forwards;
+
+}
+
+
+@keyframes contentAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* ==========================================
+   HEART
+========================================== */
+
+.heart {
+
+    position: absolute;
+
+    top: 10%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    backdrop-filter: blur(10px);
+
+    animation:
+        heartFloat 4s ease-in-out infinite;
+
+}
+
+
+.heart span {
+
+    font-size: 35px;
+
+    color: #f3a6d5;
+
+    text-shadow:
+        0 0 20px
+        rgba(243,166,213,.8);
+
+    animation:
+        heartBeat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateX(-50%)
+            translateY(-15px);
+
+    }
+
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+    }
+
+}
+
+
+/* ==========================================
+   SMALL TEXT
+========================================== */
+
+.small-text {
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255,255,255,.55);
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==========================================
+   JUDUL
+========================================== */
+
+h1 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(48px, 7vw, 90px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+}
+
+
+h1 em {
+
+    color: #e5b4f3;
+
+    text-shadow:
+        0 0 35px
+        rgba(229,180,243,.35);
+
+}
+
+
+/* ==========================================
+   GARIS
+========================================== */
+
+.line {
+
+    width: 80px;
+
+    height: 1px;
+
+    margin: 30px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e7b6f3,
+            transparent
+        );
+
+}
+
+
+/* ==========================================
+   DESKRIPSI
+========================================== */
+
+.description {
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    font-weight: 300;
+
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.open-button {
+
+    margin-top: 35px;
+
+    padding:
+        16px 30px;
+
+    border: 1px solid
+        rgba(255,255,255,.18);
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8a7f4,
+            #f2a8cf
+        );
+
+    color: #151827;
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    box-shadow:
+        0 10px 35px
+        rgba(220,160,240,.2);
+
+}
+
+
+.open-button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 45px
+        rgba(220,160,240,.35);
+
+}
+
+
+.open-button:active {
+
+    transform:
+        scale(.96);
+
+}
+
+
+.arrow {
+
+    font-size: 20px;
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.open-button:hover .arrow {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* ==========================================
+   HINT
+========================================== */
+
+.hint {
+
+    margin-top: 25px;
+
+    font-size: 11px;
+
+    color:
+        rgba(255,255,255,.35);
+
+    letter-spacing: .5px;
+
+}
+
+
+/* ==========================================
+   SAAT PINDAH HALAMAN
+========================================== */
+
+body.exit {
+
+    animation:
+        pageExit 1s ease forwards;
+
+}
+
+
+@keyframes pageExit {
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            scale(1.05);
+
+        filter: blur(8px);
+
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .opening-content {
+
+        padding: 25px;
+
+    }
+
+    h1 {
+
+        font-size: 48px;
+
+    }
+
+    .description {
+
+        font-size: 14px;
+
+    }
+
+    .heart {
+
+        top: 7%;
+
+    }
+
+}
